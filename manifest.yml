@@ -1,0 +1,12 @@
+applications:
+- name: pcf-demo-app
+  buildpack:  https://github.com/cloudfoundry/java-buildpack
+  memory: 1024M
+  instances: 1
+  host: pcf-demo-app
+  path: pcf-demo-0.0.1-SNAPSHOT.jar
+  timeout: 180
+env: 
+  SPRING_PROFILES_ACTIVE: cloud
+services:
+ - mysqldb
